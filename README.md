@@ -1,18 +1,39 @@
-# Automated Data Analysis Tool
+# Automated Data Analysis and Visualization
 
 ## Overview
 
-The **Automated Data Analysis Tool** is an advanced solution designed to streamline the process of analyzing datasets, generating insights, and visualizing results with minimal user intervention. It supports a wide range of datasets and provides comprehensive reports, including statistical summaries, correlation analysis, and visualizations. Additionally, the tool leverages OpenAI's models to create detailed narrative insights based on the analysis outcomes.
-
+This project focuses on the development of an advanced Python-based system engineered to automate data analysis, visualization, and insight narration from any given dataset. By harnessing the capabilities of a Large Language Model (LLM) in conjunction with state-of-the-art data processing and visualization techniques, the system produces comprehensive Markdown reports enhanced with high-quality visual representations. Designed for versatility, it ensures compatibility with a wide range of CSV datasets, catering to diverse analytical requirements.
 ---
 
 ## Features
+### 1. Comprehensive Automated Analysis
+- Performs detailed summary statistics, identifies missing values, and detects anomalies with precision.
+- Conducts sophisticated correlation studies and clustering analyses to reveal latent patterns in data.
+- Utilizes the LLM to provide advanced insights, suggest novel analytical techniques, and recommend methodological improvements.
 
-- **Automated Data Loading**: Simply upload a dataset, and the system will automatically load, analyze, and process the data.
-- **Summary Statistics**: The tool generates detailed statistical summaries for both numerical and categorical data, giving insights into distribution, trends, and relationships.
-- **Data Visualizations**: Automatically generates various visualizations (e.g., correlation heatmaps, distribution plots) and saves them as PNG files for easy sharing and reporting.
-- **Narrative Generation**: Utilizes OpenAI's API to generate human-readable, insightful narratives based on the analysis results, making complex data easier to understand.
-  
+### 2. Dynamic Visualization Generation
+- Automatically generates 1–3 visually appealing charts in PNG format tailored to the dataset.
+- Leverages a diverse array of visualizations, including heatmaps and bar charts, to suit the dataset’s attributes and analytical outcomes.
+
+### 3. Narrative and Insight Generation
+- Engages the LLM to craft detailed narratives encompassing dataset descriptions, analysis methodologies, significant findings, and their broader implications.
+- Produces a cohesive Markdown report (`README.md`) integrating narratives with visual elements for seamless comprehension.
+
+### 4. Efficient LLM Resource Utilization
+- Reduces reliance on direct dataset transfers by preprocessing and summarizing data before querying the LLM.
+- Optimizes token consumption while ensuring analytical depth and precision.
+
+### 5. Universal CSV Dataset Compatibility
+- Adapts dynamically to datasets of varying column types, distributions, and complexities, ensuring robust and scalable performance.
+
+### 6. Self-Contained and Independent Execution
+- Operates as a standalone script (`autolysis.py`) requiring no external dependencies beyond standard Python libraries.
+
+### 7. Ease of Use and Integration
+- Simplifies execution via the `uv` CLI tool with a single command for end-to-end functionality:
+  ```bash
+  uv run autolysis.py dataset.csv
+  ```
 ---
 
 ## Datasets Analyzed
@@ -56,3 +77,28 @@ Once the analysis is complete, you can:
    - Download the statistical summary as a text or CSV file.
    - Download the generated visualizations as PNG files.
    - Export the generated narrative report.
+## Technical Notes
+- **Optimized LLM Utilization:**
+  - Employs multiple queries to the LLM for detailed analyses and visualization recommendations.
+  - Integrates OpenAI’s function-calling API for enhanced precision.
+
+- **Environment Configuration:**
+  - Requires the `AIPROXY_TOKEN` environment variable for LLM authentication.
+
+- **Visualization Tools:**
+  - Utilizes Seaborn and Matplotlib to create compelling and insightful visualizations.
+
+## Deliverables
+1. **Core Python Script:**
+   - `autolysis.py`: A standalone script encapsulating all functionalities.
+2. **Generated Output Files:**
+   - Separate directories for each dataset (e.g., `goodreads/`, `happiness/`, `media/`) containing:
+     - `README.md`: The comprehensive Markdown report.
+     - `*.png`: Visualization files in PNG format.
+
+## Licensing
+This project is licensed under the MIT License. For details, refer to the LICENSE file in the repository.
+
+---
+
+This project aims to exemplify the seamless integration of advanced analytical techniques and LLM capabilities, offering both technical rigor and practical utility. Best wishes for your journey into automated data analysis and visualization!
